@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace PlaceToEat.Models
+namespace PlacesToEat.Models
 {
-  public class PlaceToEatContext : DbContext
+  public class PlacesToEatContext : DbContext
   {
     public DbSet<Cuisine> Cuisines { get; set; }
-    public DbSet<Restaurant> Restaurants { get; set; }
+    // public DbSet<Restaurant> Restaurants { get; set; }
 
-    public ToDoListContext(DbContextOptions options) : base(options) { }
+    public PlacesToEatContext(DbContextOptions options) : base(options) { }
   }
 }
