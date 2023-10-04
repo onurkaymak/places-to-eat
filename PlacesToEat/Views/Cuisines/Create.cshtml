@@ -1,3 +1,17 @@
 @{
   Layout = "_Layout";
 }
+
+@model PlacesToEat.Models.Cuisine
+
+<h4>Add a new cuisine</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  //can you add bootstrap or placeholder text in these?
+  @Html.TextBoxFor(model => model.Name)
+  <input type="submit" value="Add new cuisine" />
+}
+
+<p>@Html.ActionLink("Show all cuisines", "Index")</p>
