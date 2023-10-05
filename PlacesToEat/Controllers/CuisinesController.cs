@@ -41,5 +41,18 @@ namespace PlacesToEat.Controllers
                                   .FirstOrDefault(cuisine => cuisine.CuisineId == id);
       return View(thisCuisine);
     }
+
+    public ActionResult Edit(int id)
+    {
+      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
+    }
+    [HttpPost]
+    public ActionResult Edit(Cuisine cuisine)
+    {
+      _db.Cuisines.Update(cuisine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
